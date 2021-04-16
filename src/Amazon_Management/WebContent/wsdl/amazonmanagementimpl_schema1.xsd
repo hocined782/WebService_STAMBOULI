@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?><xs:schema xmlns:tns="http://amazon_management.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="unqualified" targetNamespace="http://amazon_management.com/" version="1.0">
+<xs:element name="addShoppingCart" type="tns:addShoppingCart"/>
+<xs:element name="addShoppingCartResponse" type="tns:addShoppingCartResponse"/>
+<xs:element name="creatCustomer" type="tns:creatCustomer"/>
+<xs:element name="creatCustomerResponse" type="tns:creatCustomerResponse"/>
+<xs:element name="deleteShoppingCart" type="tns:deleteShoppingCart"/>
+<xs:element name="deleteShoppingCartResponse" type="tns:deleteShoppingCartResponse"/>
+<xs:element name="logCustomer" type="tns:logCustomer"/>
+<xs:element name="logCustomerResponse" type="tns:logCustomerResponse"/>
+<xs:element name="purchaseProduct" type="tns:purchaseProduct"/>
+<xs:element name="purchaseProductResponse" type="tns:purchaseProductResponse"/>
+<xs:element name="signCustomer" type="tns:signCustomer"/>
+<xs:element name="signCustomerResponse" type="tns:signCustomerResponse"/>
+<xs:complexType name="purchaseProduct">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="customer" type="tns:customer"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="customer">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="firstname" type="xs:string"/>
+      <xs:element name="id" type="xs:int"/>
+      <xs:element name="money" type="xs:int"/>
+      <xs:element minOccurs="0" name="name" type="xs:string"/>
+      <xs:element minOccurs="0" name="password" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="purchaseProductResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:product"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="product">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="name" type="xs:string"/>
+      <xs:element name="price" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="signCustomer">
+    <xs:sequence/>
+  </xs:complexType>
+<xs:complexType name="signCustomerResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="creatCustomer">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="customer" type="tns:customer"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="creatCustomerResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:customer"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="logCustomer">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="customer" type="tns:customer"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="logCustomerResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="deleteShoppingCart">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="product" type="tns:product"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="deleteShoppingCartResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:product"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="addShoppingCart">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="product" type="tns:product"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="addShoppingCartResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:product"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

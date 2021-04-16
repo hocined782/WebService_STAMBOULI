@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="AmazonService" targetNamespace="http://amazon_management.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://amazon_management.com/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+    <schema xmlns="http://www.w3.org/2001/XMLSchema">
+  <import namespace="http://amazon_management.com/" schemaLocation="amazonmanagementimpl_schema1.xsd"/>
+</schema>
+  </wsdl:types>
+  <wsdl:message name="purchaseProduct">
+    <wsdl:part name="parameters" element="tns:purchaseProduct">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="signCustomer">
+    <wsdl:part name="parameters" element="tns:signCustomer">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="deleteShoppingCartResponse">
+    <wsdl:part name="parameters" element="tns:deleteShoppingCartResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addShoppingCartResponse">
+    <wsdl:part name="parameters" element="tns:addShoppingCartResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="creatCustomer">
+    <wsdl:part name="parameters" element="tns:creatCustomer">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="logCustomer">
+    <wsdl:part name="parameters" element="tns:logCustomer">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="deleteShoppingCart">
+    <wsdl:part name="parameters" element="tns:deleteShoppingCart">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="purchaseProductResponse">
+    <wsdl:part name="parameters" element="tns:purchaseProductResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="creatCustomerResponse">
+    <wsdl:part name="parameters" element="tns:creatCustomerResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="logCustomerResponse">
+    <wsdl:part name="parameters" element="tns:logCustomerResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="signCustomerResponse">
+    <wsdl:part name="parameters" element="tns:signCustomerResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addShoppingCart">
+    <wsdl:part name="parameters" element="tns:addShoppingCart">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="AmazonManagement">
+    <wsdl:operation name="purchaseProduct">
+      <wsdl:input name="purchaseProduct" message="tns:purchaseProduct">
+    </wsdl:input>
+      <wsdl:output name="purchaseProductResponse" message="tns:purchaseProductResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="signCustomer">
+      <wsdl:input name="signCustomer" message="tns:signCustomer">
+    </wsdl:input>
+      <wsdl:output name="signCustomerResponse" message="tns:signCustomerResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="creatCustomer">
+      <wsdl:input name="creatCustomer" message="tns:creatCustomer">
+    </wsdl:input>
+      <wsdl:output name="creatCustomerResponse" message="tns:creatCustomerResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="logCustomer">
+      <wsdl:input name="logCustomer" message="tns:logCustomer">
+    </wsdl:input>
+      <wsdl:output name="logCustomerResponse" message="tns:logCustomerResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteShoppingCart">
+      <wsdl:input name="deleteShoppingCart" message="tns:deleteShoppingCart">
+    </wsdl:input>
+      <wsdl:output name="deleteShoppingCartResponse" message="tns:deleteShoppingCartResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addShoppingCart">
+      <wsdl:input name="addShoppingCart" message="tns:addShoppingCart">
+    </wsdl:input>
+      <wsdl:output name="addShoppingCartResponse" message="tns:addShoppingCartResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="AmazonServiceSoapBinding" type="tns:AmazonManagement">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="purchaseProduct">
+      <soap:operation soapAction="urn:purchase" style="document"/>
+      <wsdl:input name="purchaseProduct">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="purchaseProductResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="signCustomer">
+      <soap:operation soapAction="urn:sign" style="document"/>
+      <wsdl:input name="signCustomer">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="signCustomerResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="creatCustomer">
+      <soap:operation soapAction="urn:creat" style="document"/>
+      <wsdl:input name="creatCustomer">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="creatCustomerResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="logCustomer">
+      <soap:operation soapAction="urn:log" style="document"/>
+      <wsdl:input name="logCustomer">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="logCustomerResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteShoppingCart">
+      <soap:operation soapAction="urn:delete" style="document"/>
+      <wsdl:input name="deleteShoppingCart">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="deleteShoppingCartResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addShoppingCart">
+      <soap:operation soapAction="urn:add" style="document"/>
+      <wsdl:input name="addShoppingCart">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="addShoppingCartResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AmazonService">
+    <wsdl:port name="AmazonPort" binding="tns:AmazonServiceSoapBinding">
+      <soap:address location="http://localhost:8080/Amazon_Management/services/AmazonPort"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
